@@ -1,9 +1,8 @@
 ---
-layout: post
-title: Optimization
-category: blog
+title: "Optimization"
 description: first R markdown
-
+layout: post
+category: blog
 ---
 
 ```{r setup, include=FALSE}
