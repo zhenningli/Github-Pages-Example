@@ -7,9 +7,7 @@ layout: default
     <div class="aside">
       <div class="info-card">
         <h1>ZhenningLi</h1>
-        </a>
-        </a>
-        <a href="https://www.instagram.com/lueur_l//" target="_blank"><img src="http://d36xtkk24g8jdx.cloudfront.net/bluebar/00c6602/images/ico/favicon.ico" alt="" width="22"/></a>
+        <a href="https://www.instagram.com/lueur_l/" target="_blank"><img src="http://d36xtkk24g8jdx.cloudfront.net/bluebar/00c6602/images/ico/favicon.ico" alt="" width="22"/></a>
       </div>
       <div id="particles-js"></div>
     </div>
