@@ -20,7 +20,7 @@ category: blog
 
 - ###### Example 1
 
-		!lingo
+		!lingo;
 		max = 72*x1 + 64*x2;
 
 		x1 +x2<=50;
@@ -72,8 +72,98 @@ category: blog
 - 根据objective coefficient ranges，x1的系数范围为[64, 96], x2的系数范围为[48, 72]时，最优基不变，但最优解改变了。For example，cof（x1）变成90，最优基不变，但是optimum = 90 * 20 + 64 * 30 = 3720。
 - 下面对“资源”的影子价格作进一步的分析，影子价格的作用（即在最优解下“资源”增加1个单位时“效益”的增量）是有限制的。 每增加1单位source利润增加48，但约束的右端项（current RHS）的允许增加和允许减少给出了影子价格有意义条件下约束右端的限制范围（因为此时最优基不变，影子价格才有意义；如果最优基已经没了，那么给出的影子价格也是不正确的）。 因此可以批准用35元买source（<48）,但每天最多买10单位；可以用低于2/h的价格来聘用临时工人以增加劳动时间，但是最多只能增加53.333h.
 
+## 2. Lingo中的集合
+
+![image.png](https://upload-images.jianshu.io/upload_images/4632352-b6a2b1c85bdbb021.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+	!Lingo;
+	Model:
+	
+		Sets: 
+			quarters/1..4/: DEM, RP, OP, INV;
+		ENDsets
+		!sum(set(subscripts): formulation)
+		min = @sum(quarters(i): 400*RP + 450*OP + 20*INV);
+		
+		@for(quarters(i): RP(i)<=40);
+		!I#GT#1, I is 'greater than' 1, #GT# logic symbol
+		@for(quarters(i)|I#GT#1:
+			INV(I) = INV(I-1) + RP(I) + OP(I) - DEM(I););
+	
+		INV(1) = 10 + RP(1) + OP(1) - DEM(1);
+	
+		DATA:
+			DEM = 40, 60, 75, 25;
+		ENDdata
+	
+	END
+	
+- Lingo模型的最基本组成要素：
+1. 集合段
+> - 以sets: 开始，以endsets结束，用来定义必要的集合变量及其元素和属性。
+> - quarters/1..100/: dem, rp, op, inv;
+2. 目标与约束段
+3. 数据段
+> - 以data：开始，以enddata结束。 格式为： attribute = value_list;
+> - 常数列表（value_list）中数据之间可以用逗号隔开，也可以用空格分开
+> - 若输入语句格式为“变量名 = ？；” 可以作为**模型的input**，手动输入值， `INV(1) = A + RP(1) + OP(1) - DEM(1);`
+4. 初始段
+> - 以init:开始，以endinit结束。格式为：attribute = value_list;
+5. 计算段
+> - 处理raw数据。
+
+		CALC:
+		T_DEM = @SUM(quarters:DEM); !TotalDemand
+		A_DEM = T_DEM/@SIZE(quarters); !AverageDemand
+		endclac
+
+
 
 ## 2. Integer Programming
+
+- ###### Example 2
+		
+		!lingo;
+		max = 98 * x1 + 277 * x2 - x2^2 - 0.3 * x1 * x2 - 2 * x2^2;
+
+		x1 + x2 <= 100;
+
+		x1<=2*x2;
+
+		@gin(x1); @gin(x2);
+		
+- ###### Results of Example 2
+
+		Local optimal solution found.
+ 		Objective value:                              11744.80
+  		Objective bound:                              11744.80
+ 	 	Infeasibilities:                              0.000000
+  		Extended solver steps:                               0
+  		Total solver iterations:                            26
+
+
+                       Variable           Value        Reduced Cost
+                             X1        66.00000           -87.80000
+                             X2        34.00000           -53.20001
+
+                            Row    Slack or Surplus      Dual Price
+                              1        11744.80            1.000000
+                              2        0.000000            0.000000
+                              3        2.000000            0.000000
+
+
+- > 在LINGO中，以“@”打头的都是函数调用。其中整形变量函数（`@BIN`,`@GIN`）和上下界限定函数（`@FREE`,`@SUB`,`@SLB`）
+
+
+
+
+
+
+
+
+
+
+
 
 
 
