@@ -112,10 +112,11 @@ category: blog
 5. 计算段
 > - 处理raw数据。
 
-		CALC:
-		T_DEM = @SUM(quarters:DEM); !TotalDemand
-		A_DEM = T_DEM/@SIZE(quarters); !AverageDemand
-		endclac
+			!Lingo;
+			CALC:
+			T_DEM = @SUM(quarters:DEM); !TotalDemand
+			A_DEM = T_DEM/@SIZE(quarters); !AverageDemand
+			endclac
 
 
 
