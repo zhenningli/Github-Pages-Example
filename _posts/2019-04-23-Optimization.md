@@ -5,7 +5,7 @@ description: lingo results/integer programming
 category: blog
 ---
 
-# Optimazation Part1
+
 
 ## 1.Lingo output results
 - **Reduced cost**: 给出最优的单纯形表中目标函数行（第一行）中变量对应的系数（即各个变量的检验数）。其中基变量的reduced cost一定为0；对于非基变量（注意：非基变量本身取值一定为0），相应的reduced cost值表示当该非基变量增加一个单位（其他非基变量保持不变）时目标函数减少的量（对于max型问题）。
@@ -73,7 +73,7 @@ category: blog
 - 下面对“资源”的影子价格作进一步的分析，影子价格的作用（即在最优解下“资源”增加1个单位时“效益”的增量）是有限制的。 每增加1单位source利润增加48，但约束的右端项（current RHS）的允许增加和允许减少给出了影子价格有意义条件下约束右端的限制范围（因为此时最优基不变，影子价格才有意义；如果最优基已经没了，那么给出的影子价格也是不正确的）。 因此可以批准用35元买source（<48）,但每天最多买10单位；可以用低于2/h的价格来聘用临时工人以增加劳动时间，但是最多只能增加53.333h.
 
 
-## Integer Programming
+## 2. Integer Programming
 
 
 
