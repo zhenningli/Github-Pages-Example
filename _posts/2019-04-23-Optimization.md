@@ -1,4 +1,12 @@
+---
+layout: post
+title: Optimazation Part1
+description: Optimazation Part1
+category: blog
+---
+
 #Optimazation Part1
+
 ##1.Lingo output results
 - **Reduced cost**: 给出最优的单纯形表中目标函数行（第一行）中变量对应的系数（即各个变量的检验数）。其中基变量的reduced cost一定为0；对于非基变量（注意：非基变量本身取值一定为0），相应的reduced cost值表示当该非基变量增加一个单位（其他非基变量保持不变）时目标函数减少的量（对于max型问题）。
 - **Slack or Surplus（松弛或剩余）**：给出约束对应的松弛变量的值：若松弛变量为0，约束取等号，即为紧约束。
