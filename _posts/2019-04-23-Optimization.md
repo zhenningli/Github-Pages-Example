@@ -18,7 +18,7 @@ category: blog
 当系数在[current RHS+allowable decrease, current RHS+allowable increase] 的范围变化时，最优基保持不变，但是**最优解**、**最优值**发生变化。
 >施工中
 - ###### Example 1
-```lingo
+```Python
 !lingo
 max = 72*x1 + 64*x2;
 
@@ -66,10 +66,10 @@ x2>=0;
 
 
 
- >- 3个约束条件可以视作3种资源： 原料、劳动时间、车间甲的加工能力。Slack and surplus 结果显示workload尚有40kg加工能力，因此不是紧约束。
->- 目标函数可以看做为“效益”，当成为紧约束的“资源”一旦增加，“效益”必然跟着增长。Dual price 结果显示在最优解下“资源”增加一个单位时，“效益”的增量：即source增加1，利润增长48；time增加1，利润增长2。这里“效益”的增量可以看做“资源”的潜在价值，经济学上称为**影子价格**（shadow price），即source的影子价格为48，time的影子价格为2，workload的影子价格为0。
->- 根据objective coefficient ranges，x1的系数范围为[64, 96], x2的系数范围为[48, 72]时，最优基不变，但最优解改变了。For example，cof（x1）变成90，最优基不变，但是optimum = 90 * 20 + 64 * 30 = 3720。
->- 
+- 3个约束条件可以视作3种资源： 原料、劳动时间、车间甲的加工能力。Slack and surplus 结果显示workload尚有40kg加工能力，因此不是紧约束。
+- 目标函数可以看做为“效益”，当成为紧约束的“资源”一旦增加，“效益”必然跟着增长。Dual price 结果显示在最优解下“资源”增加一个单位时，“效益”的增量：即source增加1，利润增长48；time增加1，利润增长2。这里“效益”的增量可以看做“资源”的潜在价值，经济学上称为**影子价格**（shadow price），即source的影子价格为48，time的影子价格为2，workload的影子价格为0。
+- 根据objective coefficient ranges，x1的系数范围为[64, 96], x2的系数范围为[48, 72]时，最优基不变，但最优解改变了。For example，cof（x1）变成90，最优基不变，但是optimum = 90 * 20 + 64 * 30 = 3720。
+- 
 
 
 
