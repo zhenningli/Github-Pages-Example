@@ -1,8 +1,9 @@
 ---
-title: "Optimization"
-author: "ZhenningLI"
-date: "2019/04/23"
-output: html_document
+layout: post
+title: Optimization
+category: blog
+description: first R markdown
+
 ---
 
 ```{r setup, include=FALSE}
@@ -10,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## R Markdown
-?????????????????????Optimization???post
+
 
 
 
