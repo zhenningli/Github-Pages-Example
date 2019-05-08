@@ -1,3 +1,14 @@
+<head>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+            inlineMath: [['$','$']]
+            }
+        });
+    </script>
+</head>
 ---
 layout: post
 title: Optimazation Part1
@@ -156,7 +167,7 @@ category: blog
 - > 在LINGO中，以“@”打头的都是函数调用。其中整形变量函数（`@BIN`,`@GIN`）和上下界限定函数（`@FREE`,`@SUB`,`@SLB`）
 
 #### 基本集合与派生集合
-集合的属性相当于以集合的元素为下标的数组， 那么 \c_ij 相当于
+集合的属性相当于以集合的元素为下标的数组， 那么 $\c_ij$ 相当于
 
 
 
