@@ -167,9 +167,13 @@ category: blog
 - > 在LINGO中，以“@”打头的都是函数调用。其中整形变量函数（`@BIN`,`@GIN`）和上下界限定函数（`@FREE`,`@SUB`,`@SLB`）
 
 #### 基本集合与派生集合
-集合的属性相当于以集合的元素为下标的数组， 那么 $c_i_j$ 相当于二维数组
+集合的属性相当于以集合的元素为下标的数组， 那么 $$c_{ij}$$ 相当于二维数组。若i为demand， j为supply，那么可以在sets中增添一行新的语句来表示此二维数组：
 
+			
+			link(demand, supply): c;
 
+表示集合link中的元素是集合demand和supply的元素组合成的有序二元组，从数学上看link就是demand和supply的笛卡尔积，也就是说
+$$link = {(s,t)|s\exist demand, t\exist supply}
 
 
 
