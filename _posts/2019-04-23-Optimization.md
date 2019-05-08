@@ -173,7 +173,7 @@ category: blog
 			link(demand, supply): c;
 
 表示集合link中的元素是集合demand和supply的元素组合成的有序二元组，从数学上看link就是demand和supply的笛卡尔积，也就是说
-$$link = {(s,t)|s\exist demand, t\exist supply}
+$$link = {(s,t)|s\exist demand, t\exist supply}$$
 
 
 
